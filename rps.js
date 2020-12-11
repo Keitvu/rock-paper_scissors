@@ -1,3 +1,7 @@
+// Global variable to use keep track of scores between user and computer.
+let userCount = 0;
+let computerCount = 0;
+
 function computerSelection(){
 
     /*
@@ -27,32 +31,56 @@ function computerSelection(){
 
 function playRound(computer, user){
 
+    /*
+    Compares the string between the user and computer 
+    and declare a winner, loser, or a tie.
+    */
+
    let output;
    switch(true){
     case computer == "rock" && user == "scissors":
     case computer == "scissors" && user == "paper":
     case computer == "paper" && user == "rock":
-        output = "You lose!" + user + " loses to " + computer;
+        output = "You lost the round! " + user + " loses to " + computer;
+        computerCount++;
         break;
 
     case user == "rock" && computer == "scissors":
     case user == "scissors" && computer == "paper":
     case user == "paper" && computer== "rock":
-        output = "You Win!" + user + " wins against " + computer;
+        output = "You won the round! " + user + " wins against " + computer;
+        userCount++;
         break;
     default:
         output = "It's a tie!";
         break;
    }
 
-   return output
+   return output;
+}
+
+function game(){
+
+    // Plays 5 round of RPS. Each round is a prompted for the user to enter their answer
+    // and then compares the value and report a winner for the round. Afterwards annouces winner of the game
+    
+    for ( i = 0 ; i < 5 ; i++){    
+        let userInput = (prompt("Choose between rock, paper, and scissors")).toLowerCase();
+        let compInput = computerSelection();
+        console.log(playRound(compInput, userInput));
+        console.log("Player: " + userCount);
+        console.log("Computer: " + computerCount);
+    }
+
+    if(userCount>computerCount){
+        console.log("You won against the computer!");
+    }else {
+        console.log("You lost against the computer");
+    }
 
 }
 
+game();
 
-for ( i=0; i<5; i++){    
-    let userInput = (prompt("Choose between rock, paper, and scissors")).toLowerCase();
-    let computerInput = computerSelection();
-    console.log(playRound(computerInput, userInput));
-}
+
 
