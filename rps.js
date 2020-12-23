@@ -1,6 +1,3 @@
-// Global variable to use keep track of scores between user and computer.
-let userCount = 0;
-let computerCount = 0;
 
 function computerSelection(){
 
@@ -80,6 +77,9 @@ function game(){
 
 }
 
+// Global variable to use keep track of scores between user and computer.
+let userCount = 0;
+let computerCount = 0;
 game();
 
 
