@@ -1,0 +1,10 @@
+.buttons{
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 10px;
+}
+
+body{
+    //background-color: black;
+    margin: 0px;
+}

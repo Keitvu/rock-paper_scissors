@@ -77,9 +77,29 @@ function game(){
 
 }
 
+function initialize(){
+
+    const buttons = document.querySelectorAll('button');
+
+    buttons.forEach((button) => {
+        
+        button.addEventListener('click', ()=>{
+    
+        alert('hello');
+        }
+        )
+        
+    });
+}
+
 // Global variable to use keep track of scores between user and computer.
 let userCount = 0;
 let computerCount = 0;
+initialize()
+
+
+
+
 game();
 
 
