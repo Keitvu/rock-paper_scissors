@@ -1,10 +1,43 @@
-.buttons{
-    border-style: solid;
-    border-radius: 5px;
-    border-width: 10px;
+
+h1{
+    position: relative;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    top:150px;
+}
+
+h2{
+    text-align: center;
+    position: relative;;
+    top:170px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#Score{
+    position: absolute;
+    top: 50%;
+    left:40%;
+}
+
+#all_buttons{
+    position:fixed;
+    top:30%;
+    left: 38%;
+}
+
+button{
+    margin:20px;
+    border: 1px solid #f2f2f2;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    padding:20px;
+}
+
+button:hover{
+    color: black;
+    border: 1px solid black;
 }
 
 body{
-    //background-color: black;
     margin: 0px;
 }

@@ -87,6 +87,7 @@ function initialize(){
     
         alert('hello');
         }
+        
         )
         
     });
@@ -96,10 +97,6 @@ function initialize(){
 let userCount = 0;
 let computerCount = 0;
 initialize()
-
-
-
-
 game();
 
 
