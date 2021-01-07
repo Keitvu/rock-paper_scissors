@@ -26,78 +26,61 @@ function computerSelection(){
 
 }
 
-function playRound(computer, user){
+function playRound(user){
 
     /*
     Compares the string between the user and computer 
     and declare a winner, loser, or a tie.
     */
-
+   let computer = computerSelection();
    let output;
-   switch(true){
+
+   switch(user.length>0){
     case computer == "rock" && user == "scissors":
     case computer == "scissors" && user == "paper":
     case computer == "paper" && user == "rock":
-        output = "You lost the round! " + user + " loses to " + computer;
+        alert( "You lost the round! " + user + " loses to " + computer);
         computerCount++;
         break;
 
     case user == "rock" && computer == "scissors":
     case user == "scissors" && computer == "paper":
     case user == "paper" && computer== "rock":
-        output = "You won the round! " + user + " wins against " + computer;
+        alert("You won the round! " + user + " wins against " + computer);
         userCount++;
         break;
     default:
-        output = "It's a tie!";
+        alert("It's a tie!");
         break;
    }
 
    return output;
 }
 
-function game(){
-
-    // Plays 5 round of RPS. Each round is a prompted for the user to enter their answer
-    // and then compares the value and report a winner for the round. Afterwards annouces winner of the game
+function updateScore(userCount, computerCount){
     
-    for ( i = 0 ; i < 5 ; i++){    
-        let userInput = (prompt("Choose between rock, paper, and scissors")).toLowerCase();
-        let compInput = computerSelection();
-        console.log(playRound(compInput, userInput));
-        console.log("Player: " + userCount);
-        console.log("Computer: " + computerCount);
-    }
 
-    if(userCount>computerCount){
-        console.log("You won against the computer!");
-    }else {
-        console.log("You lost against the computer");
-    }
 
 }
 
-function initialize(){
-
-    const buttons = document.querySelectorAll('button');
-
-    buttons.forEach((button) => {
-        
-        button.addEventListener('click', ()=>{
-    
-        alert('hello');
-        }
-        
-        )
-        
-    });
-}
 
 // Global variable to use keep track of scores between user and computer.
 let userCount = 0;
 let computerCount = 0;
-initialize()
-game();
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', ()=>{
+        playRound(button.id);
+    })
+});
+
+if(userCount>computerCount){
+    console.log("You won against the computer!");
+}else{
+    console.log("You lost against the computer");
+}
+
+
 
 
 
