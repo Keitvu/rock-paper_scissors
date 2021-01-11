@@ -11,11 +11,13 @@ h2{
     position: relative;;
     top:170px;
     font-family: 'Courier New', Courier, monospace;
+    padding:20px;
+    margin: 0px;
 }
 
 #all_buttons{
     position:relative;
-    top:150px;
+    top:200px;
     text-align: center;
 }
 
@@ -36,8 +38,15 @@ button:hover{
 #Score{
     position:relative;
     text-align: center;
-    top: 300px;
-    text-align: center;
+    top: 250px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#count{
+    display: flex;
+    justify-content: center;
+    margin-left:10px;
+    margin-right: 10px;
 }
 
 body{

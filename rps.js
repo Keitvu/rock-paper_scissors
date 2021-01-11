@@ -39,46 +39,58 @@ function playRound(user){
     case computer == "rock" && user == "scissors":
     case computer == "scissors" && user == "paper":
     case computer == "paper" && user == "rock":
-        alert( "You lost the round! " + user + " loses to " + computer);
+        output = "You lost the round! " + user + " loses to " + computer;
         computerCount++;
         break;
-
     case user == "rock" && computer == "scissors":
     case user == "scissors" && computer == "paper":
     case user == "paper" && computer== "rock":
-        alert("You won the round! " + user + " wins against " + computer);
+        output = "You won the round! " + user + " wins against " + computer;
         userCount++;
         break;
     default:
-        alert("It's a tie!");
+        output = "It's a tie!";
         break;
    }
 
    return output;
 }
 
-function updateScore(userCount, computerCount){
-    
+function updateScore(userCount, computerCount, outputRound){
 
+    /*
+     * Updates the Score of the player after each round.  
+     */
+    const score = document.querySelector('#count');
+    score.firstElementChild.textContent = 'Player: ' + userCount;
+    score.lastElementChild.textContent = 'Computer: ' + computerCount;
 
+    const buttonContainer = document.querySelector('#all_buttons');
+    const results = document.createElement('h2');
+    results.classList.add('results');
+    results.textContent = outputRound;
+    buttonContainer.appendChild(results);    
 }
 
 
 // Global variable to use keep track of scores between user and computer.
 let userCount = 0;
 let computerCount = 0;
+
+/*
+ *Initialize all the buttons and connects it to the function to play a round and update scores.
+ */
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', ()=>{
-        playRound(button.id);
+        let outputRound = playRound(button.id);
+        updateScore(userCount, computerCount, outputRound);
+        
     })
 });
 
-if(userCount>computerCount){
-    console.log("You won against the computer!");
-}else{
-    console.log("You lost against the computer");
-}
+
+
 
 
 
