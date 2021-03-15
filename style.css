@@ -38,7 +38,7 @@ button:hover{
 #Score{
     position:relative;
     text-align: center;
-    top: 250px;
+    top: 200px; 
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -48,6 +48,14 @@ button:hover{
     margin-left:10px;
     margin-right: 10px;
 }
+ 
+ #results{
+    position:relative;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-large;
+    text-align: center; 
+    margin-top: 40px;
+}  
 
 body{
     margin: 0px;
